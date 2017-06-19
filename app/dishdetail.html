@@ -71,9 +71,9 @@
                     <ul class="list-unstyled">
 						<li ng-show= "( (!commentForm.$pristine)  ) && (commentForm.$valid)"> <!--Cool!!--><!-- ng-repeat="nextComment in dish.comments | orderBy:commentSortBy"> just the newcomment, no repeat required  --> 
 	                			<blockquote>
-									<p>{{newcomment.newcommenttext}}<br>Rating: {{newcomment.newcommentrating}}</p>
+									<p>{{newcomment.comment}}<br>Rating: {{newcomment.rating}}</p>
 									<footer>
-										{{newcomment.newcommentauthor}}, <cite>{{newcomment.newcommentdate | date:'dd MMM yyyy hh:mm a'}}</cite>
+										{{newcomment.author}}, <cite>{{newcomment.date | date:'dd MMM yyyy hh:mm a'}}</cite>
 									</footer>
 								</blockquote>
 						</li>
@@ -86,7 +86,7 @@
                         <label for="name" class="col-sm-2 control-label">Name</label>
 						<div class="col-sm-4">
                         	<input type="text" class="form-control" id="name" name="name" placeholder="Enter Name"
-                    	    	ng-model="newcomment.newcommentauthor" required>
+                    	    	ng-model="newcomment.author" required>
 								<span ng-show="commentForm.name.$error.required && !commentForm.name.$pristine" 
 									class="help-block">Your Name is required.</span>
                         </div>
@@ -97,24 +97,24 @@
                         <label for="rating" class="col-sm-2 control-label">Rating</label>
 						<div class="col-sm-4">
                         	<!-- <input type="text" class="form-control" id="rating" name="rating" placeholder="Enter Rating"
-                    	    	ng-model="newcomment.newcommentrating" required>   
+                    	    	ng-model="newcomment.rating" required>   
 								<span ng-show="commentForm.rating.$error.required && !commentForm.rating.$pristine" 
 									class="help-block">Your Rating is required.</span> --> <!--  Rating is radio-btns, default=5 so not 'required' -->
-								 <!-- <div ng-model="newcomment.newcommentrating">  doesnt work here :(  -->
+								 <!-- <div ng-model="newcomment.rating">  doesnt work here :(  -->
 								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" ng-model="newcomment.newcommentrating"> 1
+								  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" ng-model="newcomment.rating"> 1
 								</label>
 								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" ng-model="newcomment.newcommentrating"> 2
+								  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" ng-model="newcomment.rating"> 2
 								</label>
 								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" ng-model="newcomment.newcommentrating"> 3
+								  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" ng-model="newcomment.rating"> 3
 								</label>
 								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" ng-model="newcomment.newcommentrating"> 4
+								  <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4" ng-model="newcomment.rating"> 4
 								</label>
 								<label class="radio-inline">
-								  <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" ng-model="newcomment.newcommentrating"> 5
+								  <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5" ng-model="newcomment.rating"> 5
 								</label>	
 								<!-- </div>			  -->				
                         </div>
@@ -125,7 +125,7 @@
                         <label for="comment" class="col-sm-2 control-label">Comment</label>
 						<div class="col-sm-4">
                         	<input type="text" class="form-control" id="comment" name="comment" placeholder="Enter Comment"
-                    	    	ng-model="newcomment.newcommenttext" required>
+                    	    	ng-model="newcomment.comment" required>
 								<span ng-show="commentForm.comment.$error.required && !commentForm.comment.$pristine" 
 									class="help-block">Your Comment is required.</span>
                         </div>
@@ -141,9 +141,9 @@
                     
                     <!-- Not reqd since we're showing the editing in the formgroup as the last comment above
 	              <h3>Your Current Comment:</h3>
-	              <p>By: {{newcomment.newcommentauthor}}
-	              <p>Rating: {{newcomment.newcommentrating}}
-	              <p>Text: {{newcomment.newcommenttext}} -->
+	              <p>By: {{newcomment.author}}
+	              <p>Rating: {{newcomment.rating}}
+	              <p>Text: {{newcomment.comment}} -->
             </div>     
                        
                 </form>
