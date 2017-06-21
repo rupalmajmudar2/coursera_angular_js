@@ -74,11 +74,13 @@ gulp.task('jshint', function() {
 		   ];
 
 		   browserSync.init(files, {
-		      server: {
-		         baseDir: "dist",
-		         index: "menu.html"
-		      }
-		   });
+			   server: {
+			     baseDir: 'dist',
+			     index: 'index.html'
+			   },
+			   reloadDelay: 1000
+			 });
+		   
 		        // Watch any files in dist/, reload on change
 		  gulp.watch(['dist/**']).on('change', browserSync.reload);
 		    });
